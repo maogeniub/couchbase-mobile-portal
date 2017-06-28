@@ -15,8 +15,8 @@ references:
   java: 'http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db011/'
 sg_download_link: 'https://packages.couchbase.com/releases/couchbase-sync-gateway/1.5.0-dp001/couchbase-sync-gateway-community_1.5.0-377_x86_64'
 platform_support:
-  ios: iOS 8+
-  tvos: tvOS 10.0.1+
+  ios: iOS 9.0+
+  tvos: tvOS 9.0+
   android: Android 4.1+
   macos: macOS 10.10+
   dotnet: .NET Core 1.0+ (.NET 4.6.1+), UWP, Xamarin iOS, Xamarin Android
