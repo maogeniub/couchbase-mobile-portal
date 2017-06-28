@@ -18,6 +18,6 @@ platform_support:
   ios: iOS 9.0+
   tvos: tvOS 9.0+
   android: Android 4.1+
-  macos: macOS 10.10+
+  macos: macOS 10.11+
   dotnet: .NET Core 1.0+ (.NET 4.6.1+), UWP, Xamarin iOS, Xamarin Android
   java: Java 7,8
