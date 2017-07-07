@@ -4,12 +4,22 @@ title: Release notes
 permalink: references/couchbase-lite/release-notes/index.html
 ---
 
+### Developer build 12
+
+<block class="net" />
+
+* More Query API -> GroupBy, Having, Select items, Join, Functions
+
+<block class="all" />
+
 ### Developer build 11
 
-<block class="java objc swift csharp" />
+<block class="java objc swift net" />
 
 * LiveQuery
 * Authentication for Replicator 
+
+<block class="all" />
 
 ### Developer build 10
 
