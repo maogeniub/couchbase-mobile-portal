@@ -8,7 +8,7 @@ permalink: references/couchbase-lite/release-notes/index.html
 
 <block class="net" />
 
-* More Query API -> GroupBy, Having, Select items, Join, Functions
+* More Query API -> GroupBy, Having, Select items, Join, Functions, Parameters, Meta
 
 <block class="all" />
 
