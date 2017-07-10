@@ -6,6 +6,11 @@ permalink: references/couchbase-lite/release-notes/index.html
 
 ### Developer build 12
 
+<block class="objc swift" />
+* Unify change event API for Database, Replicator, and LiveQuery by using block
+* More Replicator API -> Channel and DocumentID
+* More Query API -> Aggregate Functions, OrderBy, GroupBy / Having, Join, Projection, Parameters, Meta
+
 <block class="net" />
 
 * More Query API -> GroupBy, Having, Select items, Join, Functions, Parameters, Meta
