@@ -10,6 +10,11 @@ permalink: references/couchbase-lite/release-notes/index.html
 
 * More Query API -> GroupBy, Having, Select items, Join, Functions, Parameters, Meta
 
+<block class="java" />
+
+* More Replicator API -> Cookie support, Certificate pinning, immediate conflict resolving for pull replication, Channel/DocID filter
+* More Query API -> GroupBy, Having, Select items, Join, Functions, Parameters
+
 <block class="all" />
 
 ### Developer build 11
