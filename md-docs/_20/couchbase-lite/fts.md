@@ -109,7 +109,7 @@ do {
 
 ```objectivec
 CBLQueryExpression* where = [[CBLQueryExpression property:@"name"] match:@"'buy'"];
-CBLQuery *ftsQuery = [CBLQuery select:[CBLQuerySelect all]
+CBLQuery *ftsQuery = [CBLQuery select:@[]
                                  from:[CBLQueryDataSource database:database]
                                 where:where];
 

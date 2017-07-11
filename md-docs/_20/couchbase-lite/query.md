@@ -42,7 +42,7 @@ do {
 <block class="objc" />
 
 ```objectivec
-CBLQuery* query = [CBLQuery select:[CBLQuerySelect all]
+CBLQuery* query = [CBLQuery select:@[]
                               from:[CBLQueryDataSource database:database]
                              where:[
                                     [[CBLQueryExpression property:@"type"] equalTo:@"user"]
