@@ -84,7 +84,7 @@ var config = new ReplicatorConfiguration {
 };
 var replication = new Replicator(config);
 
-replication.StatusChanged += (object sender, ReplicationStatusChangedEventArgs e) => {
+replication.StatusChanged += (sender, e) => {
 	if (e.Status.Activity == ReplicatorActivityLevel.Stopped) {
 		Console.WriteLine("Replication has completed.");
 	}

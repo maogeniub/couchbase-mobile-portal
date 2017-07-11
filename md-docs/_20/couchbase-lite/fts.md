@@ -122,9 +122,9 @@ for (CBLFullTextQueryRow *row in ftsQueryResult) {
 <block class="csharp" />
 
 ```csharp
-var query = QueryFactory.Select()
-		.From(DataSourceFactory.Database(database))
-		.Where(ExpressionFactory.Property("name").Match("'buy'"));
+var query = Query.Select()
+		.From(DataSource.Database(database))
+		.Where(Expression.Property("name").Match("'buy'"));
 
 var rows = query.Run();
 foreach (var row in rows)
