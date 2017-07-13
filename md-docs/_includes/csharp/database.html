@@ -1,51 +1,49 @@
-<h3>Database Class</h3><hr class="refs-hr"/><div class="refs l1of5"><b style="font-size: 20px;">Properties</b></div><div class="refs l4of5"><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Config</a><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Count</a><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Item</a><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Name</a><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Path</a></div><hr class="refs-hr"/><div class="refs l1of5"><b style="font-size: 20px;">Methods</b></div><div class="refs l4of5"><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Database(String)</a><p class="summary">
+<h3>Database Class</h3><hr class="refs-hr"/><div class="refs l1of5"><b style="font-size: 20px;">Properties</b></div><div class="refs l4of5"><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Config</a><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Count</a><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Item</a><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Name</a><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Path</a></div><hr class="refs-hr"/><div class="refs l1of5"><b style="font-size: 20px;">Methods</b></div><div class="refs l4of5"><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Database(String)</a><p class="summary">
             Creates a database instance with the given name.  Internally
             it may be operating on the same underlying data as another instance.
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Database(Database)</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Database(Database)</a><p class="summary">
             Copy constructor
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Database(String, DatabaseConfiguration)</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Database(String, DatabaseConfiguration)</a><p class="summary">
             Creates a database given a name and some configuration
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">AddDocumentChangedListener</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">AddDocumentChangedListener</a><p class="summary">
             Adds a listener for changes on a certain document (by ID).  Similar to Changed
             but requires a parameter to add so it is a method instead of an event.
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Close</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Close</a><p class="summary">
             Closes the database
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Compact</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Compact</a><p class="summary">
             Performs a manual compaction of this database, removing old irrelevant data
             and decreasing the size of the database file on disk
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Contains</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Contains</a><p class="summary">
             Checks whether or not a given Document exists 
             in this database instance by searching for its ID.
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">CreateIndex(IListIExpression)</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">CreateIndex(IListIExpression)</a><p class="summary">
             Creates an ValueIndex index on the given path
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">CreateIndex(IList, IndexType, IndexOptions)</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">CreateIndex(IList, IndexType, IndexOptions)</a><p class="summary">
             Creates an index of the given type on the given path with the given configuration
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Delete</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Delete</a><p class="summary">
             Deletes the database
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Delete(Document)</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Delete(Document)</a><p class="summary">
             Deletes the given Document from the database
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Delete(String, String)</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Delete(String, String)</a><p class="summary">
             Deletes the contents of a database with the given name in the
             given directory
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">DeleteIndex</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">DeleteIndex</a><p class="summary">
             Deletes an index of the given IndexType on the given propertyPath
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Dispose</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Dispose</a><p class="summary">
             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">DocumentExists</a><p class="summary">
-            Checks whether a document with the given ID exists in the database
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm" target="_blank">Equals</a><p class="summary">Determines whether the specified object is equal to the current object.</p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Exists</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm" target="_blank">Equals</a><p class="summary">Determines whether the specified object is equal to the current object.</p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Exists</a><p class="summary">
             Returns whether or not a database with the given name
             exists in the given directory
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">GetDocument</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">GetDocument</a><p class="summary">
             Gets the Document with the specified ID
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm" target="_blank">GetHashCode</a><p class="summary">Serves as the default hash function. </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm" target="_blank">GetType</a><p class="summary">Gets the Type of the current instance.</p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">InBatch</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm" target="_blank">GetHashCode</a><p class="summary">Serves as the default hash function. </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm" target="_blank">GetType</a><p class="summary">Gets the Type of the current instance.</p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">InBatch</a><p class="summary">
             Runs the given batch of operations as an atomic unit
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Purge</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Purge</a><p class="summary">
             Purges the given Document from the database.  This leaves
             no trace behind and will not be replicated
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">RemoveDocumentChangedListener</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">RemoveDocumentChangedListener</a><p class="summary">
             Removes a listener for changes on a certain document (by ID).  Similar to Changed
             but requires a parameter to add so it is a method instead of an event.
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm">Save</a><p class="summary">
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm">Save</a><p class="summary">
             Saves the given Document into this database
-            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db010/html/T_Couchbase_Lite_Database.htm" target="_blank">ToString</a><p class="summary">Returns a string that represents the current object.</p></div>
+            </p><a class="token" href="http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/html/T_Couchbase_Lite_Database.htm" target="_blank">ToString</a><p class="summary">Returns a string that represents the current object.</p></div>

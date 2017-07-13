@@ -53,18 +53,4 @@ You can instantiate multiple databases with the same name and directory; these w
 
 Databases that were created with Couchbase Mobile 1.2 or later can be read using the 2.0 API. Upon detecting it is a 1.x database file format, Couchbase Lite will automatically upgrade it to the new format used in 2.0. This feature is currently only available for the default storage type, SQLite (i.e not for ForestDB databases).
 
-<block class="swift" />
-
-{% include swift/database.html %}
-
-<block class="objc" />
-
-{% include objc/database.html %}
-
-<block class="csharp" />
-
-{% include csharp/database.html %}
-
-<block class="java" />
-
-{% include java/database.html %}
+{% include refs.html name='database' %}

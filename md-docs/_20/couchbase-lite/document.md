@@ -56,14 +56,6 @@ newTask.set("createdAt", new Date());
 database.save(newTask);
 ```
 
-<block class="swift" />
-
-#### Methods
-
-<block class="swift" />
-
-{% include swift/document.html %}
-
 <block class="all" />
 
 ### Mutability
