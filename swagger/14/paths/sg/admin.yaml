@@ -154,7 +154,13 @@
       - database
     summary: Compact the database
     description: |
-      This request deletes obsolete backup revisions. When a new revision is created, the body of the previous non-conflicting revision is temporarily stored in a separate document. These backup documents are set to expire after 5 minutes. Calling the _compact endpoint will remove these backup documents immediately. For tombstone management operations, refer to the revs_limit configuration and the /{db}/_purge endpoint.
+      Triggers a compaction process. Compaction is defined as the process of purging the JSON bodies of non-leaf revisions. As shown on the diagram below, only properties with a leading underscore (`_` is the character to denote properties reserved for Couchbase) are kept to construct the revision tree.
+      
+        ![](https://cl.ly/1Q1F0i3f2i3n/compaction.gif)
+      
+      Note that compaction on Sync Gateway is running periodically in the background (every 5 minutes). So calling this endpoint manually on the Admin REST API is not necessary.
+      
+      The compaction process does not remove JSON bodies of leaf nodes (conflicting branches). Hence, it is important to resolve conflicts in your application in order to re-claim disk space when the compaction process is executed.
     responses:
       200:
         description: Request completed successfully.

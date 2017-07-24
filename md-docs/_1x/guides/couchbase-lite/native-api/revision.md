@@ -39,3 +39,13 @@ Here are the main differences between Saved and Unsaved Revision objects:
 - Unsaved revisions are useful for adding attachments.
 
 Unsaved Revisions are mainly useful for manipulating attachments, since they provide the only means to do so via the API. See Attachments for examples of adding/removing attachments.
+
+## Pruning
+
+Pruning is the process that deletes the metadata and/or JSON bodies associated with old non-leaf revisions. Leaf revisions are not impacted. The process runs automatically every time a revision is added. The **maxRevTreeDepth** value defaults to 20, which means that the metadata and JSON bodies of the last 20 revisions are retained in Couchbase Lite as shown on the animation below.
+
+<img src="https://cl.ly/321B1Y3T0K07/pruning-cbl.gif" class=portrait />
+
+After the pruning process, the document may end up with **disconnected branches** if there were conflicting revisions. On the animation below, the document was updated 5 times which resulted in a conflicting branch appearing (`3'` - `7'`). When the current revision (or longest branch) reaches the 23rd update, the conflicting branch is cut off. The revision tree is not in a corrupted state and the logic that chooses the winning revision still applies. But it may make it impossible to do certain merges to resolve conflicts and occupy disk space that could have been free-ed if the conflict was resolved early on.
+
+<img src="https://cl.ly/0q342b0R251y/pruning-conflict.gif" class=portrait />
