@@ -3,6 +3,14 @@ id: release-notes
 title: Release notes
 permalink: references/couchbase-lite/release-notes/index.html
 ---
+### Developer build 13
+
+<block class="java" />
+
+* More Query API -> Meta, Limit, Offset
+* Changed CouchbaseLiteException extends from Exception instead of RuntimeException
+
+<block class="all" />
 
 ### Developer build 12
 
