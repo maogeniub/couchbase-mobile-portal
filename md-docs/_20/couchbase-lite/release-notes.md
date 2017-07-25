@@ -6,6 +6,7 @@ permalink: references/couchbase-lite/release-notes/index.html
 ### Developer build 13
 
 <block class="objc swift" />
+
 * Support query projection with alias names
 * CBLQuery returns CBLQueryResultSet<CBLQueryResult> instead of NSEnumerator<CBLQueryRow>. Same for Swift, Query return ResultSet<Result> instead of QueryIterator<QueryRow>. CBLQueryRow is still used by CBLPredicateQuery.
 * CBLQueryResult supports get values both by indexes and by keys. Same for Result in Swift.
