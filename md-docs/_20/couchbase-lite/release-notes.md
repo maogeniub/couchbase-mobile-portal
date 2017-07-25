@@ -5,6 +5,13 @@ permalink: references/couchbase-lite/release-notes/index.html
 ---
 ### Developer build 13
 
+<block class="objc swift" />
+* Support query projection with alias names
+* CBLQuery returns CBLQueryResultSet<CBLQueryResult> instead of NSEnumerator<CBLQueryRow>. Same for Swift, Query return ResultSet<Result> instead of QueryIterator<QueryRow>. CBLQueryRow is still used by CBLPredicateQuery.
+* CBLQueryResult supports get values both by indexes and by keys. Same for Result in Swift.
+* CBLDocument.documentID -> CBLDocument.id
+* Bug fixes : [#1819](https://github.com/couchbase/couchbase-lite-ios/issues/1819), [#1824](https://github.com/couchbase/couchbase-lite-ios/issues/1824), [#1825](https://github.com/couchbase/couchbase-lite-ios/issues/1825), [#1835](https://github.com/couchbase/couchbase-lite-ios/issues/1835)
+
 <block class="java" />
 
 * More Query API -> Meta, Limit, Offset
