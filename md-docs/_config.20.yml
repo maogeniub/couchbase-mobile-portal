@@ -3,14 +3,14 @@ collections:
     output: true
     permalink: /:path:output_ext
 version: '2.0'
-ios_dev_build: '2.0DB012'
+ios_dev_build: '2.0DB013'
 android_dev_build: '2.0.0-DB012'
 dev_build_release_date: 'July 12, 2017'
-objc_dev_build_download_link: https://packages.couchbase.com/releases/couchbase-lite/ios/2.0DB12/couchbase-lite-objc_community_2.0.0-296.zip
-swift_dev_build_download_link: https://packages.couchbase.com/releases/couchbase-lite/ios/2.0DB12/couchbase-lite-swift_community_2.0.0-296.zip
+objc_dev_build_download_link: https://packages.couchbase.com/releases/couchbase-lite/ios/2.0DB13/couchbase-lite-objc_community_2.0.0-321.zip
+swift_dev_build_download_link: https://packages.couchbase.com/releases/couchbase-lite/ios/2.0DB13/couchbase-lite-swift_community_2.0.0-321.zip
 references:
-  objc: 'http://docs.couchbase.com/mobile/2.0/couchbase-lite-objc/db012/'
-  swift: 'http://docs.couchbase.com/mobile/2.0/couchbase-lite-swift/db012/'
+  objc: 'http://docs.couchbase.com/mobile/2.0/couchbase-lite-objc/db013/'
+  swift: 'http://docs.couchbase.com/mobile/2.0/couchbase-lite-swift/db013/'
   csharp: 'http://docs.couchbase.com/mobile/2.0/couchbase-lite-net/db012/'
   java: 'http://docs.couchbase.com/mobile/2.0/couchbase-lite-java/db013/'
 sg_download_link: 'https://packages.couchbase.com/releases/couchbase-sync-gateway/1.5.0-dp001/couchbase-sync-gateway-community_1.5.0-377_x86_64'
