@@ -49,6 +49,8 @@ Download the current Sync Gateway [developer build](../../whatsnew.html) and sta
 
 For platform specific installation instructions, refer to the Sync Gateway [installation guide](../../../current/installation/sync-gateway/index.html).
 
+### Replication API
+
 Replication objects are now bidirectional. You no longer need to create two separate Replications to push and pull. An instance's `push` and `pull` properties govern which direction(s) to transfer documents; they both default to `true`, so if you want unidirectional replication you'll need to turn the other direction off. The following example creates a bi-directional replications with Sync Gateway.
 
 <block class="objc" />
@@ -87,13 +89,6 @@ var config = new ReplicatorConfiguration {
     Target = url
 };
 var replication = new Replicator(config);
-
-replication.StatusChanged += (sender, e) => {
-	if (e.Status.Activity == ReplicatorActivityLevel.Stopped) {
-		Console.WriteLine("Replication has completed.");
-	}
-};
-
 replication.Start();
 ```
 
@@ -113,15 +108,40 @@ replicator.start();
 
 <block class="all" />
 
-The URL scheme for remote database URLs has changed. You should now use `blip:`, or `blips:` for SSL/TLS connections (or the more-standard `ws:` / `wss:` notation).
+As shown in the code snippet above, the URL scheme for remote database URLs has changed in Couchbase Lite 2.0. You should now use `blip:`, or `blips:` for SSL/TLS connections (or the more-standard `ws:` / `wss:` notation). You can access the Sync Gateway `_all_docs` endpoint [http://localhost:4984/db/\_all\_docs?include_docs=true](http://localhost:4984/db/_all_docs?include_docs=true) to check that the documents are successfully replicated.
 
-Documents that have been pushed to Sync Gateway can be found on the Sync Gateway Admin UI [http://localhost:4985/_admin/db/db](http://localhost:4985/_admin/db/db).
-
-Additionally, you can now replicate between two local databases. This isn't often needed, but it can be very useful. For example, you can implement incremental backup by pushing your main database to a mirror on a backup disk.
-
-Performance is hard to quantify because it depends so much on document size, network conditions, device SSD speed, and server load. But the new replicator is generally a lot faster than the old one. We've seen up to twice the speed on iOS devices, and we expect even greater improvement on Android because the 1.x replicator there was slower.
+Starting in Couchbase Lite 2.0, replication between two local databases is now supported. This isn't often needed, but it can be very useful. For example, you can implement incremental backup by pushing your main database to a mirror on a backup disk.
 
 > **Troubleshooting:** As always with replication, logging is your friend. The `Sync` tag logs information specific to the replicator, and `WS` logs about the WebSocket. If you have connectivity problems, make sure that any proxy server (like nginx) in front of Sync Gateway supports WebSockets.
+
+<block class="csharp java" />
+
+#### Replication Change Listener
+
+The replication change event can be used to monitor the status of the replication. The following example logs a message to the console once the replication has finished (i.e when the status is equal to `STOPPED`).
+
+<block class="csharp" />
+
+```csharp
+replication.StatusChanged += (sender, e) => {
+	if (e.Status.Activity == ReplicatorActivityLevel.Stopped) {
+		Console.WriteLine("Replication has completed.");
+	}
+};
+```
+
+<block class="java" />
+
+```java
+replicator.addChangeListener(new ReplicatorChangeListener() {
+		@Override
+		public void changed(Replicator replicator, Replicator.Status status, CouchbaseLiteException error) {
+				if (status.getActivityLevel().equals(Replicator.ActivityLevel.STOPPED)) {
+						Log.d("app", "Replication was completed.");
+				}
+		}
+});
+```
 
 <block class="all" />
 
