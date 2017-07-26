@@ -504,13 +504,9 @@ database.Changed += (sender, e) => {
 
 > **Note:** The notifications may not be delivered immediately after the document changes. Notifications aren't delivered during a transaction; they're buffered up for delivery after the transaction completes. And on iOS / Mac OS, the notifications are scheduled on the runloop, so they won't be delivered until after the event that triggered them completes.
 
-## Compaction
+## Database housekeeping
 
-Compaction is defined as the process of purging the JSON bodies of non-leaf revisions. As shown on the diagram below, only properties with a leading underscore (`_` is the character to denote properties reserved for Couchbase) are kept to construct the revision tree.
-
-<img src="https://cl.ly/1Q1F0i3f2i3n/compaction.gif" class=portrait />
-
-Compaction can only be invoked manually via the [compact()](../../../../references/couchbase-lite/couchbase-lite/database/database/index.html#void-compact) method. The compaction process does not remove JSON bodies of leaf nodes. Hence, it is important to resolve conflicts in your application in order to re-claim disk space when the compaction process is executed.
+Refer to the [`Revisions`](../revision/index.html) guide to learn about compaction and pruning to manage the database size.
 
 ## Deleting a database
 
