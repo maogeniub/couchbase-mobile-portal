@@ -504,16 +504,13 @@ database.Changed += (sender, e) => {
 
 > **Note:** The notifications may not be delivered immediately after the document changes. Notifications aren't delivered during a transaction; they're buffered up for delivery after the transaction completes. And on iOS / Mac OS, the notifications are scheduled on the runloop, so they won't be delivered until after the event that triggered them completes.
 
-## Database housekeeping
+## Compaction
 
-A database of course stores documents, and a document stores multiple revisions of its content; this is part of the MVCC (Multi-Version Concurrency Control) system that manages concurrency and detects replication conflicts. But this also causes the database file to grow over time. Unlike a Git repository, whose history is vital, a database should be periodically compacting to reclaim space. Compaction deletes the following:
+Compaction is defined as the process of purging the JSON bodies of non-leaf revisions. As shown on the diagram below, only properties with a leading underscore (`_` is the character to denote properties reserved for Couchbase) are kept to construct the revision tree.
 
-- The JSON bodies of non-current revisions of documents (that is, all but the current revision and any unresolved 
-conflicts)
-- The metadata of the oldest revisions (see below for details)
-- Attachments that are no longer used by any document revision
+<img src="https://cl.ly/1Q1F0i3f2i3n/compaction.gif" class=portrait />
 
-You can tune the maximum revision tree depth parameter (the `Database` object's `maxRevTreeDepth` property). This governs how old a revision must be before its metadata is discarded. It defaults to 20, meaning that each document will remember the history of its latest 20 revisions. Setting this to a smaller value will save storage space, but can result in spurious conflicts if users are making lots of offline changes and then sync. Compaction happens automatically in the background to remove revisions older than the `maxRevTreeDepth` value.
+Compaction can only be invoked manually via the [compact()](../../../../references/couchbase-lite/couchbase-lite/database/database/index.html#void-compact) method. The compaction process does not remove JSON bodies of leaf nodes. Hence, it is important to resolve conflicts in your application in order to re-claim disk space when the compaction process is executed.
 
 ## Deleting a database
 
