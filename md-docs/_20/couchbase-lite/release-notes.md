@@ -18,6 +18,15 @@ permalink: references/couchbase-lite/release-notes/index.html
 * More Query API -> Meta, Limit, Offset
 * Changed CouchbaseLiteException extends from Exception instead of RuntimeException
 
+<block class="net" />
+
+* Queries can now make use of `Limit()` and `Offset()`
+* *The internal synching mechanism has been altered in a breaking way*.  With this release you need to use Sync Gateway 1.5.0-477 or higher.
+* `SelectResult` can now use `As` to create an alias for that particular column
+* Columns can now be accessed by key instead of just by index (by default the key is the last element of the property name that was selected [e.g. contact.address.city -> city], or an arbitrary 1-based index string $1, $2, $3, etc for rows that are not based on a property such as min, sum, etc.  If an alias is provided, that will be used instead)
+* Corrected a silly spelling mistake (`Support.NetDestkop`-> `Support.NetDesktop`)
+* Removed `DocumentID`, `Document`, etc from `IQueryRow` and use `IResult` instead (see docs\examples\Program.cs for how to get the Document or ID, but `Document` might make a comeback before GA)
+
 <block class="all" />
 
 ### Developer build 12
